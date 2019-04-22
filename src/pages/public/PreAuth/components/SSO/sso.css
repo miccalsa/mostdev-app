@@ -1,0 +1,39 @@
+.sso_container-login {
+    color: #7f7f7f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.sso_container-img {
+    width: 180px;
+    margin-bottom: 2em;
+}
+
+.sso_container-description {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.sso_container-logo {
+    width: 65px;
+    margin-bottom: 30px;
+}
+
+.sso_container_login-btn {
+    width: 70%;
+    background-color: #5c81ac;
+    border-color: #5c81ac;
+}
+
+.sso_container_login-btn:hover, .sso_container_login-btn:active {
+    background-color: #7ca0c5;
+    border-color: #7ca0c5;
+}
+
+.sso_container_small-text {
+    margin-top: 20px;
+    font-size: 0.9em;
+}

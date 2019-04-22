@@ -1,0 +1,31 @@
+.sso_container {
+    background-color: #5c81ac;
+    height: 100vh;
+    display: flex;
+    font-size: 16px;
+}
+
+.sso_container-center {
+    display: flex;
+    align-items: center;
+}
+
+.sso_container-white {
+    background-color: #ffffff;
+}
+
+.sso_container-welcome {
+    color: #ffffff;
+    margin: 0 auto;
+    max-width: 80%;;
+}
+
+.sso_container-welcome h1 {
+    text-transform: uppercase;
+    font-size: 3.5em;
+}
+
+.sso_container-welcome p {
+    font-size: 1.4em;
+    margin-top: 50px;
+}
