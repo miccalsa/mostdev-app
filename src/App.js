@@ -1,28 +1,20 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
-import Login from './pages/public/PreAuth/login';
+import HomeLayout from './pages/Home/container/home';
+import SSO from './pages/public/PreAuth/login';
 
 class App extends Component {
   render() {
-    return <Login />;
-    // return (
-    //   <div className="App">
-    //     <header className="App-header">
-    //       <img src={logo} className="App-logo" alt="logo" />
-    //       <p>
-    //         Edit <code>src/App.js</code> and save to reload.
-    //       </p>
-    //       <a
-    //         className="App-link"
-    //         href="https://reactjs.org"
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //       >
-    //         Learn React Now!!!!
-    //       </a>
-    //     </header>
-    //   </div>
-    // );
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/login' component={SSO} />
+          <Route exact path='/home' component={HomeLayout} />
+          <Redirect exact path='/' to='/login' />
+        </Switch>
+      </BrowserRouter>
+    );
   }
 }
 

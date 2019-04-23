@@ -1,0 +1,79 @@
+.ProfileBox {
+    background: #ffffff;
+    border: 1px solid #e1e8ed;
+    min-height: 500px;
+    margin: 0 auto;
+    width: 90%;
+    padding: 20px 0;
+}
+
+.ProfileBox-picture {
+    text-align: center;
+}
+
+.ProfileBox-picture img {
+    height: 200px;
+    border: 1px solid #e1e8ed;
+}
+
+.ProfileBox-details {
+    margin: 20px 30px;
+}
+
+.ProfileBox-details-name {
+    color: #0f1941;
+    font-size: 1.4em;
+    font-weight: bold;
+    display: block;
+}
+
+.ProfileBox-details-role {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 1.2em;
+    display: block;
+}
+
+.ProfileBox-about {
+    border-top: 1px solid #e1e8ed;
+    border-bottom: 1px solid #e1e8ed;
+    padding: 20px;
+}
+
+.ProfileBox-about h6 {
+    color: #0f1941;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.ProfileBox-social-media {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ProfileBox-social-media a {
+    display: flex;
+    width: 45px;
+    height: 45px;
+    background-color: #0f1941;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6em;
+}
+
+.ProfileBox-view-more {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ProfileBox-view-more-btn {
+    border: 2px solid #0f1941;
+    cursor: pointer;
+    font-weight: bold;
+    color: #0f1941;
+    padding: 10px;
+    text-transform: uppercase;
+}

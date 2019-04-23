@@ -1,0 +1,10 @@
+.home-layout {
+    height: 1000px;
+    background-color: #fafafa;
+}
+
+.home-layout_center {
+    display: flex;
+    align-items: center;
+    height: 90vh;
+}
