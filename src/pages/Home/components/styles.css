@@ -2,7 +2,7 @@
     background: #ffffff;
     border: 1px solid #e1e8ed;
     min-height: 500px;
-    margin: 0 auto;
+    margin: 20px auto;
     width: 90%;
     padding: 20px 0;
 }
@@ -12,12 +12,12 @@
 }
 
 .ProfileBox-picture img {
-    height: 200px;
+    height: 160px;
     border: 1px solid #e1e8ed;
 }
 
 .ProfileBox-details {
-    margin: 20px 30px;
+    margin: 30px;
 }
 
 .ProfileBox-details-name {
@@ -33,10 +33,21 @@
     display: block;
 }
 
+.ProfileBox-details-logout {
+    color: #0f1941;
+    font-size: 1em;
+    display: block; 
+    text-align: right;
+}
+
+.ProfileBox-details-logout i {
+    margin-right: 5px;
+}
+
 .ProfileBox-about {
     border-top: 1px solid #e1e8ed;
     border-bottom: 1px solid #e1e8ed;
-    padding: 20px;
+    padding: 30px;
 }
 
 .ProfileBox-about h6 {
@@ -76,4 +87,75 @@
     color: #0f1941;
     padding: 10px;
     text-transform: uppercase;
+}
+
+.ProjectBox {
+    background: #ffffff;
+    border: 1px solid #e1e8ed;
+    display: grid;
+    grid-gap: 20px 10px;
+    grid-template-columns: repeat(5, 1fr);
+    min-height: 90vh;
+    margin: 20px auto;
+    width: 97%;
+    padding: 20px;
+    max-height: 700px;
+    overflow: scroll;
+}
+
+.ProjectBox_item {
+    cursor: pointer;
+    width: 95%;
+    height: 180px;
+    background-color: #01BCD7;
+    margin: 0 auto;
+    color: #ffffff;
+    position: relative;
+}
+
+.ProjectBox_item_title {
+    font-size: 1.8em;
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.ProjectBox_item_description {
+    font-size: 0.8em;
+    margin: 20px 10px 0;
+    overflow: hidden;
+    max-height: 80px;
+}
+
+.ProjectBox_item_overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    flex-direction: column;
+}
+
+.ProjectBox_item:hover .ProjectBox_item_overlay {
+    display: flex;
+}
+
+.ProjectBox_item_links {
+    display: block;
+    color: #ffffff;
+    font-size: 1.1em;
+    border: 1px solid #ffffff;
+    padding: 3px 0;
+    margin: 5px 0;
+    width: 100px;
+}
+
+.ProjectBox_item_links:hover {
+    color: #ffffff;
+    text-decoration: none;
 }

@@ -7,24 +7,20 @@ import Footer from '../../../components/Footer/footer';
 import './layout.css';
 
 class HomeLayout extends Component {
-    render () {
+    render() {
         return (
             <div className="home-layout">
-                <div className="row">
-                    <div className="col-md-8 home-layout_center">
-                        <ProjectList />
-                    </div>
-                    <div className="col-md-4 home-layout_center">
-                        <Profile />
-                    </div>
+                <div className="project-section">
+                    <ProjectList />
                 </div>
-                <div className="row">
-                    <div className="col-md-12">
-                        <Footer />
-                    </div>
+                <div className="profile-section">
+                    <Profile />
+                </div>
+                <div className="footer-section">
+                    <Footer />
                 </div>
             </div>
-      );
+        );
     }
 }
 

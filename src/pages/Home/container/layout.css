@@ -1,10 +1,19 @@
-.home-layout {
-    height: 1000px;
+.home-layout{
     background-color: #fafafa;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: auto;
+    grid-template-areas: "projects profile" "footer footer";
 }
 
-.home-layout_center {
-    display: flex;
-    align-items: center;
-    height: 90vh;
+.project-section {
+    grid-area: projects;
+}
+
+.profile-section {
+    grid-area: profile;
+}
+
+.footer-section {
+    grid-area: footer;
 }

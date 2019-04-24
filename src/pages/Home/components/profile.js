@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import './styles.css';
 
 function Profile() {
@@ -11,6 +13,10 @@ function Profile() {
             <div className="ProfileBox-details">
                 <span className="ProfileBox-details-name">John Smith</span>
                 <span className="ProfileBox-details-role">Front-end Developer</span>
+                <Link to="/login" className="ProfileBox-details-logout">
+                    <i className="fas fa-power-off"></i>
+                    Logout
+                </Link>
             </div>
             <div className="ProfileBox-about">
                 <h6>About</h6>

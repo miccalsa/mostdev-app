@@ -15,9 +15,6 @@ function SSO() {
             <Link to='/home' className="btn btn-primary sso_container_login-btn">
                 Login
             </Link>
-            {/* <button type="button" className="btn btn-primary sso_container_login-btn">
-                Login
-            </button> */}
             <p className="sso_container_small-text">
                 Use your Yacht Google email to login
             </p>
