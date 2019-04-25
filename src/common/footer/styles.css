@@ -16,6 +16,10 @@
     font-size: 2em;
 }
 
+.footer small {
+    font-size: 0.5em;
+}
+
 .footer_image {
     height: 80px;
 }
@@ -26,6 +30,13 @@
     height: 50px;
     border-radius: 50px;
     border: 1px solid #5c81ac;
-    color: #5c81ac;
     text-align: center;
+}
+
+.footer_questions a {
+    color: #5c81ac;
+}
+
+.footer_questions a:hover {
+    text-decoration: none;
 }

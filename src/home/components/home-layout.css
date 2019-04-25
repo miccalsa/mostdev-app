@@ -1,3 +1,23 @@
+.home-layout{
+    background-color: #fafafa;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: auto;
+    grid-template-areas: "projects profile" "footer footer";
+}
+
+.project-section {
+    grid-area: projects;
+}
+
+.profile-section {
+    grid-area: profile;
+}
+
+.footer-section {
+    grid-area: footer;
+}
+
 .ProfileBox {
     background: #ffffff;
     border: 1px solid #e1e8ed;
@@ -159,3 +179,4 @@
     color: #ffffff;
     text-decoration: none;
 }
+
