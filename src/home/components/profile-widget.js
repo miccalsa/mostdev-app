@@ -4,15 +4,17 @@ import { Link } from 'react-router-dom';
 
 import './home-layout.css';
 
-const ProfileWidget = () => {
+const ProfileWidget = (props) => {
+  const user = props.profile;
+
   return (
     <div className="ProfileBox">
       <div className="ProfileBox-picture">
-        <img src="https://randomuser.me/api/portraits/lego/6.jpg" alt="Profile pic" />
+        <img src={user.picture} alt="Profile pic" />
       </div>
       <div className="ProfileBox-details">
-        <span className="ProfileBox-details-name">John Smith</span>
-        <span className="ProfileBox-details-role">Front-end Developer</span>
+        <span className="ProfileBox-details-name">{user.name}</span>
+        <span className="ProfileBox-details-role">{user.role}</span>
         <Link to="/login" className="ProfileBox-details-logout">
           <i className="fas fa-power-off"></i>
           Logout
@@ -20,26 +22,24 @@ const ProfileWidget = () => {
       </div>
       <div className="ProfileBox-about">
         <h6>About</h6>
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor
-          sit amet consectetur.
-        </p>
+        <p>{user.description}</p>
       </div>
       <div className="ProfileBox-social-media">
-        <a href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
-          <i className="fab fa-linkedin"></i>
-        </a>
-        <a href="https://facebool.com" rel="noopener noreferrer" target="_blank">
-          <i className="fab fa-google"></i>
-        </a>
-        <a href="https://github.com" rel="noopener noreferrer" target="_blank">
-          <i className="fab fa-github"></i>
-        </a>
+        {
+          user.social && user.social.map((media, index) => {
+            const iconClass = `fab fa-${media.type}`;
+            return (
+              <Link key={index} to={media.url} rel="noopener noreferrer" target="_blank">
+                <i className={iconClass}></i>
+              </Link>
+            );
+          })
+        }
       </div>
       <div className="ProfileBox-view-more">
-        <span className="ProfileBox-view-more-btn">
+        <Link to='/home/profile' className="ProfileBox-view-more-btn">
           View Details
-        </span>
+        </Link>
       </div>
     </div>
   );

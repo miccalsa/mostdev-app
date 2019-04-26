@@ -13,7 +13,7 @@ class HomeContainer extends Component {
 
   render() {
     return (
-      <HomeLayout projects={this.props.projects} />
+      <HomeLayout projects={this.props.projects} profile={this.props.user} />
     );
   }
 }
@@ -21,7 +21,7 @@ class HomeContainer extends Component {
 function mapStateToProps(state) {
   return {
     projects: state.get('home').get('projects'),
-    user: state.get('login').get('user'),
+    user: state.get('profile').toJS(),
   }
 }
 
