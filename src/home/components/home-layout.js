@@ -6,11 +6,11 @@ import Footer from '../../common/footer/footer';
 
 import './home-layout.css';
 
-const HomeLayout = () => {
+const HomeLayout = (props) => {
   return (
     <div className="home-layout">
       <div className="project-section">
-        <ProjectList />
+        <ProjectList projects={props.projects} />
       </div>
       <div className="profile-section">
         <ProfileWidget />

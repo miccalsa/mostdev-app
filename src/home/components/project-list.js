@@ -1,24 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import ProjectItem from './project-item';
 
 import './home-layout.css';
 
-const ProjectList = () => {
+const ProjectList = (props) => {
   return (
     <div className="ProjectBox">
-      <div className="ProjectBox_item">
-        <span className="ProjectBox_item_title">Project</span>
-        <p className="ProjectBox_item_description">
-          Lorem ipsum dolor sit amet consectetur,
-          lorem ipsum dolor sit amet consectetur,
-          lorem ipsum dolor sit amet consectetur
-        </p>
-        <div className="ProjectBox_item_overlay">
-          <Link to="http:www.google.com" className="ProjectBox_item_links">Sources</Link>
-          <Link to="http:www.google.com" className="ProjectBox_item_links">Wiki</Link>
-          <Link to="http:www.google.com" className="ProjectBox_item_links">Live Demo</Link>
-        </div>
-      </div>
+      {
+        props.projects.map(project => (
+          <ProjectItem key={project.id} details={project} />
+        ))
+      }
     </div>
   );
 }

@@ -4,7 +4,7 @@ import SSO from './sso';
 
 import './login-layout.css';
 
-const LoginLayout = () => {
+const LoginLayout = (props) => {
   return (
     <React.Fragment>
       <div className="sso_container">
@@ -23,7 +23,7 @@ const LoginLayout = () => {
             </div>
           </div>
           <div className="col-md-4 sso_container-center sso_container-white">
-            <SSO />
+            <SSO loginClick={props.loginClick} />
           </div>
         </div>
       </div>
