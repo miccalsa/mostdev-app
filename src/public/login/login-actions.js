@@ -4,11 +4,17 @@ const handleSsoRequest = () => dispatch => dispatch(requestLogin());
 
 const handleSsoSuccess = (success) => dispatch => {
   const responseData = success.profileObj;
-  sessionStorage.setItem('mostdev-user', success.tokenId);
+  const sessionData = Object.assign({}, responseData, { token: success.tokenId });
+  sessionStorage.setItem('mostdev-user', JSON.stringify(sessionData));
   return dispatch(requestLoginSuccess(responseData));
 }
 
 const handleSsoFail = (error) => dispatch => dispatch(requestLoginFailed(error));
+
+const handleUserData = () => dispatch => {
+  const sessionData = JSON.parse(sessionStorage.getItem('mostdev-user'));
+  return dispatch(requestUserData(sessionData));
+}
 
 const handleSsoLogout = () => dispatch => {
   sessionStorage.removeItem('mostdev-user');
@@ -35,6 +41,13 @@ const requestLoginFailed = (errorResponse) => {
   }
 }
 
+const requestUserData = (data) => {
+  return {
+    type: loginTypes.USER_REQUEST,
+    payload: data,
+  }
+}
+
 const requestLogout = () => {
   return {
     type: loginTypes.LOGOUT_REQUEST,
@@ -45,5 +58,6 @@ export {
   handleSsoRequest,
   handleSsoSuccess,
   handleSsoFail,
+  handleUserData,
   handleSsoLogout,
 };

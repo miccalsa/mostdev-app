@@ -12,6 +12,7 @@ const loginReducer = (state = initialState, action) => {
     case loginTypes.LOGIN_REQUEST:
       return state.set('status', 'validating');
     case loginTypes.LOGIN_SUCCESS:
+    case loginTypes.USER_REQUEST:
       const userDetails = {
         profilePic: action.payload.imageUrl,
         name: action.payload.name,

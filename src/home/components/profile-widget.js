@@ -5,16 +5,17 @@ import { GoogleLogout } from 'react-google-login';
 import './home-layout.css';
 
 const ProfileWidget = (props) => {
-  const user = props.profile;
+  const { user, profile } = props;
 
   return (
     <div className="ProfileBox">
       <div className="ProfileBox-picture">
-        <img src={user.picture} alt="Profile pic" />
+        <img src={user.profilePic} alt="Profile pic" />
       </div>
       <div className="ProfileBox-details">
         <span className="ProfileBox-details-name">{user.name}</span>
-        <span className="ProfileBox-details-role">{user.role}</span>
+        <span className="ProfileBox-details-email">{user.email}</span>
+        <span className="ProfileBox-details-role">{profile.role}</span>
         <div className="ProfileBox-details-section">
           <GoogleLogout
             render={renderProps => (
@@ -31,11 +32,11 @@ const ProfileWidget = (props) => {
       </div>
       <div className="ProfileBox-about">
         <h6>About</h6>
-        <p>{user.description}</p>
+        <p>{profile.description}</p>
       </div>
       <div className="ProfileBox-social-media">
         {
-          user.social && user.social.map((media, index) => {
+          profile.social && profile.social.map((media, index) => {
             const iconClass = `fab fa-${media.type}`;
             return (
               <Link key={index} to={media.url} rel="noopener noreferrer" target="_blank">

@@ -47,6 +47,12 @@
     display: block;
 }
 
+.ProfileBox-details-email {
+    color: #0f1941;
+    font-weight: 1.2em;
+    display: block;
+}
+
 .ProfileBox-details-role {
     color: rgba(0, 0, 0, 0.6);
     font-weight: 1.2em;
