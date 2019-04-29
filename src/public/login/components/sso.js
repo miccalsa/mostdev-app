@@ -22,6 +22,7 @@ const SSO = (props) => {
         onSuccess={props.ssoSuccess}
         onFailure={props.ssoFail}
         onRequest={props.ssoRequest}
+        hostedDomain="yacht.nl"
         cookiePolicy={'single_host_origin'}
       />
       {props.loginData.status === 'error' && (

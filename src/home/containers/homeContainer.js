@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import HomeLayout from '../components/home-layout';
 import * as actions from '../home-actions';
+import { handleSsoLogout } from '../../public/login/login-actions';
 
 class HomeContainer extends Component {
 
@@ -11,9 +12,18 @@ class HomeContainer extends Component {
     this.props.actions.fetchProjects();
   }
 
+  onUserLogout = () => {
+    this.props.logout();
+    this.props.history.push('/');
+  }
+
   render() {
     return (
-      <HomeLayout projects={this.props.projects} profile={this.props.user} />
+      <HomeLayout
+        projects={this.props.projects}
+        profile={this.props.user}
+        ssoLogout={this.onUserLogout}
+      />
     );
   }
 }
@@ -27,7 +37,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(actions, dispatch)
+    actions: bindActionCreators(actions, dispatch),
+    logout: bindActionCreators(handleSsoLogout, dispatch),
   }
 }
 

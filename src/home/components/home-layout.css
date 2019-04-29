@@ -53,11 +53,17 @@
     display: block;
 }
 
+.ProfileBox-details-section {
+    text-align: right;
+}
+
 .ProfileBox-details-logout {
     color: #0f1941;
     font-size: 1em;
-    display: block; 
-    text-align: right;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 20px 0;
 }
 
 .ProfileBox-details-logout i {

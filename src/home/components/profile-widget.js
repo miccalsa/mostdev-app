@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
+import { GoogleLogout } from 'react-google-login';
 
 import './home-layout.css';
 
@@ -15,10 +15,19 @@ const ProfileWidget = (props) => {
       <div className="ProfileBox-details">
         <span className="ProfileBox-details-name">{user.name}</span>
         <span className="ProfileBox-details-role">{user.role}</span>
-        <Link to="/login" className="ProfileBox-details-logout">
-          <i className="fas fa-power-off"></i>
-          Logout
-        </Link>
+        <div className="ProfileBox-details-section">
+          <GoogleLogout
+            render={renderProps => (
+              <button type="button" onClick={renderProps.onClick}  className="ProfileBox-details-logout">
+                <i className="fas fa-power-off"></i>
+                Logout
+              </button> 
+            )}
+            clientId="310577854418-3nrped443as94c4ba914sc30si6ohnrd.apps.googleusercontent.com"
+            buttonText="Logout"
+            onLogoutSuccess={props.ssoLogout}
+          />
+        </div>
       </div>
       <div className="ProfileBox-about">
         <h6>About</h6>

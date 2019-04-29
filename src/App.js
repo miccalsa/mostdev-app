@@ -13,8 +13,8 @@ class App extends Component {
         <Switch>
           <Redirect exact path='/' to='/login' />
           <Route exact path='/login' component={LoginContainer} />
-          <AuthRoute exact path='/home' component={HomeContainer} canAccess={true} />
-          <AuthRoute exact path='/home/profile' component={ProfileContainer} canAccess={true} />
+          <AuthRoute exact path='/home' component={HomeContainer} />
+          <AuthRoute exact path='/home/profile' component={ProfileContainer} />
         </Switch>
       </BrowserRouter>
     );

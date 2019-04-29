@@ -2,6 +2,7 @@ const loginTypes = {
   LOGIN_REQUEST: 'LOGIN_REQUEST',
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_FAILED: 'LOGIN_FAILED',
+  LOGOUT_REQUEST: 'LOGOUT_REQUEST',
 };
 
 export default loginTypes;

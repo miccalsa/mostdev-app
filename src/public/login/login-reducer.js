@@ -26,6 +26,11 @@ const loginReducer = (state = initialState, action) => {
         .set('status', 'error')
         .set('isLoggedIn', false)
         .set('user', {});
+    case loginTypes.LOGOUT_REQUEST:
+      return state
+       .set('status', 'pending')
+        .set('isLoggedIn', false)
+        .set('user', {});
     default:
       return state;
   }

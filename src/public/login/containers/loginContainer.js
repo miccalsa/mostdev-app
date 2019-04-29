@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import LoginLayout from '../components/login-layout';
 import * as actions from '../login-actions';
@@ -17,7 +18,7 @@ class LoginContainer extends Component {
 
   render() {
     if (sessionStorage.getItem('mostdev-user')) {
-      this.props.history.push('/home');
+      return (<Redirect to="/home" />);
     }
 
     return (

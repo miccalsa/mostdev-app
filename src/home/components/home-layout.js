@@ -13,7 +13,7 @@ const HomeLayout = (props) => {
         <ProjectList projects={props.projects} />
       </div>
       <div className="profile-section">
-        <ProfileWidget profile={props.profile} />
+        <ProfileWidget profile={props.profile} ssoLogout={props.ssoLogout} />
       </div>
       <div className="footer-section">
         <Footer />

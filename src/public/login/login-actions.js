@@ -10,6 +10,11 @@ const handleSsoSuccess = (success) => dispatch => {
 
 const handleSsoFail = (error) => dispatch => dispatch(requestLoginFailed(error));
 
+const handleSsoLogout = () => dispatch => {
+  sessionStorage.removeItem('mostdev-user');
+  return dispatch(requestLogout());
+}
+
 const requestLogin = () => {
   return {
     type: loginTypes.LOGIN_REQUEST,
@@ -30,8 +35,15 @@ const requestLoginFailed = (errorResponse) => {
   }
 }
 
+const requestLogout = () => {
+  return {
+    type: loginTypes.LOGOUT_REQUEST,
+  }
+}
+
 export {
   handleSsoRequest,
   handleSsoSuccess,
-  handleSsoFail
+  handleSsoFail,
+  handleSsoLogout,
 };
