@@ -10,11 +10,22 @@ const initialState = fromJS({
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case loginTypes.LOGIN_REQUEST:
-      return state.set('status', 'pending');
+      return state.set('status', 'validating');
     case loginTypes.LOGIN_SUCCESS:
-      return state.set('status', 'success').set('isLoggedIn', true);
+      const userDetails = {
+        profilePic: action.payload.imageUrl,
+        name: action.payload.name,
+        email: action.payload.email,
+      };
+      return state
+        .set('status', 'success')
+        .set('isLoggedIn', true)
+        .set('user', userDetails);
     case loginTypes.LOGIN_FAILED:
-      return state.set('status', 'error').set('isLoggedIn', false);
+      return state
+        .set('status', 'error')
+        .set('isLoggedIn', false)
+        .set('user', {});
     default:
       return state;
   }

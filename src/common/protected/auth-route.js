@@ -6,7 +6,7 @@ const AuthRoute = ({ component: Component, canAccess, ...rest }) => (
     {...rest}
     render={
       (props) => (
-        canAccess ? 
+        sessionStorage.getItem('mostdev-user') ? 
           <Component {...props} /> :
           <Redirect to={{pathname: '/login', state: {from: props.location}}} />
       )

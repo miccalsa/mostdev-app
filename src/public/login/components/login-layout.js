@@ -23,7 +23,12 @@ const LoginLayout = (props) => {
             </div>
           </div>
           <div className="col-md-4 sso_container-center sso_container-white">
-            <SSO loginClick={props.loginClick} />
+            <SSO
+              loginData={props.loginData} 
+              ssoRequest={props.ssoRequest}
+              ssoSuccess={props.ssoSuccess} 
+              ssoFail={props.ssoFail} 
+            />
           </div>
         </div>
       </div>

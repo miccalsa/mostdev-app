@@ -7,20 +7,26 @@ import * as actions from '../login-actions';
 
 class LoginContainer extends Component {
 
-  handleLoginClick = () => {
-    this.props.actions.authenticate();
-  }
-
   componentDidUpdate() {
-    const login = this.props.login.toJS();
+    const { login, history } = this.props;
+
     if (login.status === 'success' && login.isLoggedIn) {
-      this.props.history.push('/home');
+      history.push('/home');
     }
   }
 
   render() {
+    if (sessionStorage.getItem('mostdev-user')) {
+      this.props.history.push('/home');
+    }
+
     return (
-      <LoginLayout loginClick={this.handleLoginClick} />
+      <LoginLayout
+        loginData={this.props.login}
+        ssoRequest={this.props.actions.handleSsoRequest}
+        ssoSuccess={this.props.actions.handleSsoSuccess}
+        ssoFail={this.props.actions.handleSsoFail}
+      />
     );
   }
 }
@@ -33,7 +39,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    login: state.get('login')
+    login: state.get('login').toJS()
   }
 }
 
