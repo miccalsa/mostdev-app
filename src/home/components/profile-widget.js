@@ -15,7 +15,7 @@ const ProfileWidget = (props) => {
       <div className="ProfileBox-details">
         <span className="ProfileBox-details-name">{user.name}</span>
         <span className="ProfileBox-details-email">{user.email}</span>
-        <span className="ProfileBox-details-role">{profile.role}</span>
+        <span className="ProfileBox-details-role">{profile.role || 'Add role to your profile'}</span>
         <div className="ProfileBox-details-section">
           <GoogleLogout
             render={renderProps => (
@@ -32,7 +32,7 @@ const ProfileWidget = (props) => {
       </div>
       <div className="ProfileBox-about">
         <h6>About</h6>
-        <p>{profile.description}</p>
+        <p>{profile.description || 'Add something about you'}</p>
       </div>
       <div className="ProfileBox-social-media">
         {

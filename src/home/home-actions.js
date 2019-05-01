@@ -1,35 +1,14 @@
 import homeTypes from './home-types';
+import API from '../config/api';
 
 const fetchProjects = () => {
   return (dispatch) => {
-    const data = [
-      {
-        id: 0,
-        name: 'Ethical Hacker',
-        description: 'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.',
-        codeLink: '',
-        wikiLink: '',
-        demoLink: '',
-      },
-      {
-        id: 1,
-        name: 'CV Matcher',
-        description: 'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.',
-        codeLink: '',
-        wikiLink: '',
-        demoLink: '',
-      },
-      {
-        id: 2,
-        name: 'Assignment Scrapper',
-        description: 'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.',
-        codeLink: '',
-        wikiLink: '',
-        demoLink: '',
-      },
-    ];
-    dispatch(requestProjectData())
-    setTimeout(() => dispatch(requestProjectDataSuccess(data)), 2000);
+
+    dispatch(requestProjectData());
+    API
+      .get('/api/projects')
+      .then(response => dispatch(requestProjectDataSuccess(response.data)))
+      .catch(error => dispatch(requestProjectDataFailed(error)))
   }
 }
 
@@ -46,7 +25,8 @@ const requestProjectDataSuccess = (projects) => {
   }
 }
 
-const requestProjectDataFailed = () => {
+const requestProjectDataFailed = (error) => {
+  console.log(error);
   return {
     type: homeTypes.PROJECT_DATA_FAILED,
   }

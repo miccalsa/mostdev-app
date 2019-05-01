@@ -3,18 +3,22 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import HomeLayout from '../components/home-layout';
-import * as actions from '../home-actions';
+import { fetchProjects } from '../home-actions';
+import { fetchProfile } from '../../profile/profile-actions';
 import { handleSsoLogout, handleUserData } from '../../public/login/login-actions';
 
 class HomeContainer extends Component {
 
-  componentDidMount() {
-    this.loadLoggedInUser();
+  componentWillMount() {
     this.props.fetchUserData();
-    this.props.actions.fetchProjects();
+    this.props.fetchProjects();
   }
 
-  loadLoggedInUser = () => {}
+  componentDidUpdate(prevProps) {
+    if (!prevProps.user.email && this.props.user.email) {
+      this.props.fetchProfile(this.props.user.email);
+    }
+  }
 
   onUserLogout = () => {
     this.props.logout();
@@ -43,7 +47,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(actions, dispatch),
+    fetchProjects: bindActionCreators(fetchProjects, dispatch),
+    fetchProfile: bindActionCreators(fetchProfile, dispatch),
     logout: bindActionCreators(handleSsoLogout, dispatch),
     fetchUserData: bindActionCreators(handleUserData, dispatch),
   }
