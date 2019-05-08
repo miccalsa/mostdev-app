@@ -9,15 +9,15 @@ import './home-layout.css';
 const HomeLayout = (props) => {
   return (
     <div className="home-layout">
-      <div className="project-section">
-        <ProjectList projects={props.projects} />
-      </div>
       <div className="profile-section">
         <ProfileWidget
           user={props.user}
           profile={props.profile}
           ssoLogout={props.ssoLogout}
         />
+      </div>
+      <div className="project-section">
+        <ProjectList projects={props.projects} />
       </div>
       <div className="footer-section">
         <Footer />

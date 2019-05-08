@@ -128,17 +128,26 @@
     color: #234A71;
 }
 
-.ProjectBox {
+.ProjectBox_Layout {
     background: #181C1F;
+    margin: 20px auto;
+    width: 97%;
+    max-height: 700px;
+    overflow: auto;
+    min-height: 90vh;
+}
+
+.ProjectBox_Layout h4 {
+    color: #E3E3E3;
+    font-size: 1.1em;
+    padding: 10px 20px 0;
+}
+
+.ProjectBox {
     display: grid;
     grid-gap: 20px 15px;
     grid-template-columns: repeat(3, 1fr);
-    min-height: 90vh;
-    margin: 20px auto;
-    width: 97%;
     padding: 20px;
-    max-height: 700px;
-    overflow: auto;
 }
 
 .ProjectBox_item {
