@@ -14,11 +14,12 @@ class HomeContainer extends Component {
     this.props.fetchProjects();
   }
 
-  componentDidUpdate(prevProps) {
+  /// TODO: enable this call when profile is implemented
+  /* componentDidUpdate(prevProps) {
     if (!prevProps.user.email && this.props.user.email) {
       this.props.fetchProfile(this.props.user.email);
     }
-  }
+  } */
 
   onUserLogout = () => {
     this.props.logout();

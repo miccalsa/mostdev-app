@@ -1,13 +1,25 @@
+/* HOME LAYOT */
+
 .home-layout{
-    background-color: #fafafa;
+    background-color: #2D2E31;
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 22% 49% 29%;
     grid-template-rows: auto;
-    grid-template-areas: "projects profile" "footer footer";
+    grid-template-areas:    "profile projects projects" 
+                            "profile chatbot agenda" 
+                            "footer footer footer";
 }
 
 .project-section {
     grid-area: projects;
+}
+
+.chatbot-section {
+    grid-area: chatbot;
+}
+
+.agenda-section {
+    grid-area: agenda;
 }
 
 .profile-section {
@@ -18,9 +30,10 @@
     grid-area: footer;
 }
 
+/* PROFILE COMPONENT */
+
 .ProfileBox {
-    background: #ffffff;
-    border: 1px solid #e1e8ed;
+    background: #181C1F;
     min-height: 500px;
     margin: 20px auto;
     width: 90%;
@@ -32,30 +45,30 @@
 }
 
 .ProfileBox-picture img {
-    height: 160px;
-    border: 1px solid #e1e8ed;
+    max-width: 85%;
+    border-radius: 3%;
 }
 
 .ProfileBox-details {
-    margin: 30px;
+    margin: 10px 20px;
 }
 
 .ProfileBox-details-name {
-    color: #0f1941;
-    font-size: 1.4em;
+    color: #234A71;
+    font-size: 1.2em;
     font-weight: bold;
     display: block;
 }
 
 .ProfileBox-details-email {
-    color: #0f1941;
-    font-weight: 1.2em;
+    color: #9AA4AC;
+    font-weight: 1.1em;
     display: block;
 }
 
 .ProfileBox-details-role {
-    color: rgba(0, 0, 0, 0.6);
-    font-weight: 1.2em;
+    color: #9AA4AC;
+    font-weight: 1.1em;
     display: block;
 }
 
@@ -64,7 +77,7 @@
 }
 
 .ProfileBox-details-logout {
-    color: #0f1941;
+    color: #E3E3E3;
     font-size: 1em;
     background: none;
     border: none;
@@ -73,24 +86,29 @@
 }
 
 .ProfileBox-details-logout i {
+    color: #E3E3E3;
     margin-right: 5px;
 }
 
 .ProfileBox-about {
-    border-top: 1px solid #e1e8ed;
-    border-bottom: 1px solid #e1e8ed;
-    padding: 30px;
+    border-top: 1px solid #9AA4AC;
+    border-bottom: 1px solid #9AA4AC;
+    padding: 10px 20px;
 }
 
 .ProfileBox-about h6 {
-    color: #0f1941;
-    font-size: 1.4em;
+    color: #E3E3E3;
+    font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
+.ProfileBox-about p {
+    color: #9AA4AC;
+}
+
 .ProfileBox-social-media {
-    margin: 20px 0;
+    margin: 5px 0;
     display: flex;
     justify-content: space-evenly;
 }
@@ -99,47 +117,60 @@
     display: flex;
     width: 45px;
     height: 45px;
-    background-color: #0f1941;
-    color: #ffffff;
+    color: #E3E3E3;
     justify-content: center;
     align-items: center;
-    font-size: 1.6em;
+    font-size: 1.2em;
 }
 
 .ProfileBox-view-more {
-    margin-top: 60px;
+    margin-top: 30px;
     margin-bottom: 20px;
     text-align: center;
 }
 
 .ProfileBox-view-more-btn {
-    border: 2px solid #0f1941;
+    border: 2px solid #234A71;
     cursor: pointer;
     font-weight: bold;
-    color: #0f1941;
+    color: #234A71;
     padding: 10px;
     text-transform: uppercase;
 }
 
-.ProjectBox {
-    background: #ffffff;
-    border: 1px solid #e1e8ed;
-    display: grid;
-    grid-gap: 20px 10px;
-    grid-template-columns: repeat(5, 1fr);
-    min-height: 90vh;
+.ProfileBox-view-more-btn:hover, .ProfileBox-view-more-btn:active {
+    color: #234A71;
+}
+
+/* PROJECT COMPONENT */
+
+.ProjectBox_Layout {
+    background: #181C1F;
     margin: 20px auto;
     width: 97%;
-    padding: 20px;
     max-height: 700px;
     overflow: auto;
+    min-height: 90vh;
+}
+
+.ProjectBox_Layout h4 {
+    color: #E3E3E3;
+    font-size: 1.1em;
+    padding: 10px 20px 0;
+}
+
+.ProjectBox {
+    display: grid;
+    grid-gap: 20px 15px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
 }
 
 .ProjectBox_item {
     cursor: pointer;
     width: 95%;
     height: 180px;
-    background-color: #01BCD7;
+    background-color: #5BB85D;
     margin: 0 auto;
     color: #ffffff;
     position: relative;
@@ -160,7 +191,7 @@
 }
 
 .ProjectBox_item_overlay {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.75);
     position: absolute;
     text-align: center;
     top: 0;
@@ -189,6 +220,68 @@
 
 .ProjectBox_item_links:hover {
     color: #ffffff;
-    text-decoration: none;
 }
 
+/* CHATBOT COMPONENT */
+
+.Chatbox_Layout {
+    background: #181C1F;
+    margin: 20px auto;
+    overflow: auto;
+    min-height: 400px;
+}
+
+.Chatbox_Layout h4 {
+    color: #E3E3E3;
+    font-size: 1.1em;
+    padding: 10px 20px 0;
+}
+
+.Chatbox {
+    padding: 20px;
+}
+
+.Chatbox > div {
+    width: 90%;
+    height: 100px;
+    color: #E3E3E3;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #E74C3C;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+
+/* AGENDA COMPONENT */
+
+.Agenda_Layout {
+    background: #181C1F;
+    margin: 20px auto;
+    width: 90%;
+    overflow: auto;
+    min-height: 400px;
+}
+
+.Agenda_Layout h4 {
+    color: #E3E3E3;
+    font-size: 1.1em;
+    padding: 10px 20px 0;
+}
+
+.Agenda {
+    padding: 20px;
+}
+
+.Agenda > div {
+    width: 90%;
+    height: 100px;
+    color: #E3E3E3;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #375a7f;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
